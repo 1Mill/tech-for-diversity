@@ -61,6 +61,12 @@ module.exports = {
     }
   },
 
+  /*
+  ** Forcer webpack to check for changes within files
+  */
+  watchers: {
+    webpack: {
+      poll: true
     }
   }
 }
