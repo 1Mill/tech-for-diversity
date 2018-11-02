@@ -1,0 +1,45 @@
+version: '3'
+
+services:
+  db:
+    image: postgres:11-alpine
+    networks:
+      - backend
+    env_file:
+      - '.env'
+    volumes:
+      - postgres:/var/lib/postgresql/data
+
+  api:
+    build: ./api
+    depends_on:
+      - db
+    env_file:
+      - '.env'
+    networks:
+      - backend
+      - frontend
+    volumes:
+      - ./api:/app
+    ports:
+      - 3001:3000
+    command: bundle exec rails s -p 3000 -b 0.0.0.0
+
+  client:
+    build: ./client
+    env_file:
+      - '.env'
+    networks:
+      - frontend
+    volumes:
+      - ./client:/app
+    ports:
+      - 3000:3000
+    command: yarn nuxt -PORT=3000 -HOST=0.0.0.0
+
+volumes:
+  postgres: {}
+
+networks:
+  backend: {}
+  frontend: {}
