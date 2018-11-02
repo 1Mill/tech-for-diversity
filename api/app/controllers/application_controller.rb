@@ -1,4 +1,6 @@
 class ApplicationController < ActionController::API
+	include ActionController::MimeResponds
+
 	def render_resource(resource)
 		if resource.errors.empty?
 			render json: resource
