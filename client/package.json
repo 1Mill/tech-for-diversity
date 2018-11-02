@@ -1,1 +1,21 @@
-{}
+{
+  "name": "tech-for-diversity",
+  "version": "1.0.0",
+  "description": "Front-end application for tech-for-diversity api.",
+  "author": "Erik Ekberg",
+  "private": true,
+  "scripts": {
+    "dev": "nuxt",
+    "build": "nuxt build",
+    "start": "nuxt start",
+    "generate": "nuxt generate"
+  },
+  "dependencies": {
+    "@nuxtjs/axios": "^5.0.0",
+    "cross-env": "^5.2.0",
+    "nuxt": "^2.0.0"
+  },
+  "devDependencies": {
+    "nodemon": "^1.11.0"
+  }
+}
