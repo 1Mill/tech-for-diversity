@@ -46,7 +46,8 @@ module.exports = {
   ** Axios module configuration
   */
   axios: {
-    baseURL: 'http://api:3000'
+    baseURL: 'http://api:3000',
+    retry: { retries: 3 }
   },
 
   /*
