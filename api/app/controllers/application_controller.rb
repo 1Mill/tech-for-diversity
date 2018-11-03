@@ -1,5 +1,4 @@
 class ApplicationController < ActionController::API
-	include ActionController::MimeResponds
 
 	def render_resource(resource)
 		if resource.errors.empty?
@@ -21,4 +20,6 @@ class ApplicationController < ActionController::API
 			]
 		}, status: :bad_request
 	end
+  include ActionController::MimeResponds
+  respond_to :json
 end
