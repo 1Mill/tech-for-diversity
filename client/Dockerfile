@@ -2,7 +2,7 @@ FROM node:10-alpine
 
 RUN apk update
 
-RUN npm install -g yarn@1
+RUN npm install -g yarn@1.12
 
 RUN mkdir /app
 WORKDIR /app
