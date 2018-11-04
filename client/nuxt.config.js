@@ -52,6 +52,15 @@ module.exports = {
   },
 
   /*
+  ** Auth module configuration
+  */
+  auth: {
+    login: { url: '/users/login' },
+    logout: { url: '/users/logout' },
+    user: { url: '/users/current' },
+  },
+
+  /*
   ** Build configuration
   */
   build: {
