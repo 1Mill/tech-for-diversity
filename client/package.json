@@ -13,6 +13,7 @@
   "dependencies": {
     "@nuxtjs/auth": "^4.5.3",
     "@nuxtjs/axios": "^5.0.0",
+    "@nuxtjs/vuetify": "^0.4.3",
     "cross-env": "^5.2.0",
     "nuxt": "^2.0.0"
   },
