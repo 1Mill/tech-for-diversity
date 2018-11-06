@@ -60,7 +60,7 @@ module.exports = {
   */
   auth: {
     login: { url: '/users/login' },
-    logout: { url: '/users/logout' },
+    logout: { url: '/users/logout', method: 'delete' },
     user: { url: '/users/current' },
   },
 
