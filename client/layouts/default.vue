@@ -9,11 +9,13 @@ export default {
 </script>
 
 <template>
-	<v-app>
-		<the-nav/>
+	<div id='app'>
+		<v-app>
+			<the-nav/>
 
-		<v-container>
-			<nuxt/>
-		</v-container>
-	</v-app>
+			<v-container>
+				<nuxt/>
+			</v-container>
+		</v-app>
+	</div>
 </template>
