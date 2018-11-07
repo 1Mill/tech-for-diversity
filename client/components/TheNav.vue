@@ -1,13 +1,19 @@
 <script>
+import UserLogin from '@/components/UserLogin'
+
 export default {
+	components: {
+		UserLogin
+	},
 	data () {
 		return {
 			open: true,
+
+			loginDialog: false,
+
 			links: [
 				{name: 'Home', to: '/'},
-				{name: 'About', to: '/about'},
-				{name: 'Login', to: '/login'},
-				{name: 'Sign Up', to: '/sign-up'}
+				{name: 'About', to: '/about'}
 			]
 		}
 	}
@@ -28,6 +34,14 @@ export default {
 			>
 				{{ link.name }}
 			</v-btn>
+
+			<v-btn @click.native='loginDialog = !loginDialog, open = !open' active-class=''>
+				Login
+			</v-btn>
 		</v-bottom-nav>
+
+		<v-dialog v-model='loginDialog'>
+			<user-login/>
+		</v-dialog>
 	</div>
 </template>
