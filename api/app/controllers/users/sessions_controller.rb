@@ -1,5 +1,14 @@
 class Users::SessionsController < Devise::SessionsController
+	def create
+		super { @token = current_token }
+	end
+
 	def show
-		render json: current_user, :only => [:id, :email]
+	end
+
+	private
+
+	def current_token
+		request.env['warden-jwt_auth.token']
 	end
 end
