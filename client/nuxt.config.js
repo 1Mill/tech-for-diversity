@@ -59,9 +59,15 @@ module.exports = {
   ** Auth module configuration
   */
   auth: {
-    login: { url: '/users/login' },
-    logout: { url: '/users/logout', method: 'delete' },
-    user: { url: '/users/current' },
+    strategies: {
+      local: {
+        endpoints: {
+          login: { url: '/auth/login', method: 'post'},
+          logout: { ur: '/auth/logout', method: 'delete' },
+          user: { url: '/auth/current', method: 'get' }
+        }
+      }
+    }
   },
 
   /*
