@@ -20,7 +20,7 @@ export default {
 				</v-flex>
 			</v-layout>
 
-			<user-login-form v-else />
+			<user-login-form v-else/>
 		</v-container>
 	</v-card>
 </template>
