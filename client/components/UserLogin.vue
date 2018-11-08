@@ -11,7 +11,6 @@ export default {
 <template>
 	<v-card>
 		<v-container>
-
 			<v-layout
 			v-if='$auth.loggedIn'
 			>
