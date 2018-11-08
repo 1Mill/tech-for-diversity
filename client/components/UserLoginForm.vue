@@ -1,21 +1,24 @@
 <script>
+import { mapActions } from 'vuex'
+
 export default {
 	data () {
 		return {
-			email: null,
-			password: null
+			email: '',
+			password: '',
+			error: null
 		}
 	},
 	methods: {
-		submit () {
-			console.log('Form was submitted')
-		}
+		...mapActions ([
+			'loginUser'
+		])
 	}
 }
 </script>
 
 <template>
-	<v-form @submit.prevent='submit'>
+	<v-form @submit.prevent='loginUser({"email": email, "password": password})'>
 		<v-text-field
 		v-model='email'
 		label='Email'
