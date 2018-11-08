@@ -15,7 +15,7 @@ export default {
 			v-if='$auth.loggedIn'
 			>
 				<v-flex>
-					YOU ARE LOGGED IN!
+					Logged in as {{ $auth.user.email }}
 				</v-flex>
 			</v-layout>
 
