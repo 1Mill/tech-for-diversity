@@ -2,6 +2,8 @@
 1. Rails CORS and Nuxt Axios BaseURL
   * Use Docker service hostnames, however, Nuxt does not appear to evalaute "http://api:3001" to api service as it is evaluated client side rather than server side.
 
+1. For some reason "/api/v1/auth/login" generates a JWT token, but "/auth/login/" does not (when the path scope is changed).
+
 # Outline of backend
 ## User
   * Email + Passowrd (Devise JWT)
