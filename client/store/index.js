@@ -2,8 +2,9 @@ export const state = () => ({
 })
 
 export const actions = {
-	nuxtServerInit ({ commit }) {
-		console.log("SOMETHING HAPPENED")
+	async nuxtServerInit ({ commit }) {
+		const data = await this.$axios.$get(`/api/projects`)
+		commit('projects/SET', data)
 	},
 	loginUser (context, { email, password }) {
 		this.$auth.loginWith('local', {
