@@ -1,9 +1,16 @@
 <script>
+import { mapActions } from 'vuex'
+
 import UserLoginForm from '@/components/UserLoginForm'
 
 export default {
 	components: {
 		UserLoginForm
+	},
+	methods: {
+		...mapActions ([
+			'logoutUser'
+		])
 	}
 }
 </script>
@@ -17,6 +24,9 @@ export default {
 				<v-flex>
 					Logged in as {{ $auth.user.email }}
 				</v-flex>
+				<v-btn @click.native='logoutUser'>
+					Logout
+				</v-btn>
 			</v-layout>
 
 			<user-login-form v-else/>
