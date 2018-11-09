@@ -1,4 +1,7 @@
 class Project < ApplicationRecord
+	validates :title, :description,
+		:presence => true
+
 	enum issue_area: {
 		civic_infrastructure: 0,
 		cultural_issues: 1,
