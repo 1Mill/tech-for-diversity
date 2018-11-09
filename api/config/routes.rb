@@ -12,5 +12,7 @@ Rails.application.routes.draw do
 		devise_scope :user do
 			get 'auth/current', :to => 'users/sessions#show'
 		end
+
+		resources :projects
 	end
 end
