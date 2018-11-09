@@ -17,6 +17,9 @@ const createStore = () => {
 				.catch(e => {
 					console.log(e)
 				})
+			},
+			async logoutUser () {
+				await this.$auth.logout()
 			}
 		}
 	})
