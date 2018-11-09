@@ -1,8 +1,8 @@
 require 'rails_helper'
 
-RSpec.describe 'POST /login', type: :request do
+RSpec.describe 'POST /api/v1/users/login', type: :request do
 	let(:user) { Fabricate(:user) }
-	let(:url) { '/login'}
+	let(:url) { '/api/v1/users/login' }
 	let(:params) do
 		{
 			user: {
@@ -13,12 +13,10 @@ RSpec.describe 'POST /login', type: :request do
 	end
 
 	context 'when params are correct' do
-		before do
-			post url, params: params
-		end
+		before { post url, params: params }
 
-		it 'returns 200' do
-			expect(response).to have_http_status(200)
+		it 'returns 201' do
+			expect(response).to have_http_status(201)
 		end
 
 		it 'returns JTW token in authorization header' do
@@ -34,7 +32,7 @@ RSpec.describe 'POST /login', type: :request do
 	end
 
 	context 'when params are incorrect' do
-		before { post url }
+		before { post url, params: nil }
 
 		it 'returns unathorized status' do
 			expect(response.status).to eq 401
@@ -42,8 +40,8 @@ RSpec.describe 'POST /login', type: :request do
 	end
 end
 
-RSpec.describe 'DELETE /logout', type: :request do
-	let(:url) { '/logout' }
+RSpec.describe 'DELETE /api/v1/users/logout', type: :request do
+	let(:url) { '/api/v1/users/logout' }
 
 	it 'returns 204, no content' do
 		delete url
