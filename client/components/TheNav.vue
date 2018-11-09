@@ -36,7 +36,12 @@ export default {
 			</v-btn>
 
 			<v-btn @click.native='loginDialog = !loginDialog, open = !open' active-class=''>
-				Login
+				<span v-if='$auth.loggedIn'>
+					Sign out
+				</span>
+				<span v-else>
+					Login
+				</span>
 			</v-btn>
 		</v-bottom-nav>
 
