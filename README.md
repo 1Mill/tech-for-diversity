@@ -20,7 +20,7 @@
   * location_city :string
   * location_state :enum
   * project_state :enum
-  * hoamgepage :string
+  * homepage :string
   * description :text (? support markdown on render)
 
 ## Community
