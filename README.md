@@ -19,7 +19,7 @@
   * issue_area :enum (Civic, Cultural, Economy, ...)
   * location_city :string
   * location_state :enum
-  * project_state :enum
+  * status :enum
   * homepage :string
   * description :text (? support markdown on render)
 
