@@ -51,7 +51,10 @@ module.exports = {
   ** Axios module configuration
   */
   axios: {
-    baseURL: 'http://api:3000/api/v1/',
+    host: 'localhost',
+    port: '3001',
+    prefix: '/api/v1/',
+
     retry: { retries: 3 }
   },
 
