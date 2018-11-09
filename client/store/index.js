@@ -5,7 +5,7 @@ const createStore = () => {
 		state: () => ({
 		}),
 		actions: {
-			loginUser ({ commit }, { email, password }) {
+			loginUser (context, { email, password }) {
 				this.$auth.loginWith('local', {
 					data: {
 						user: {
