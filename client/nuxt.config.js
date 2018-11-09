@@ -51,11 +51,14 @@ module.exports = {
   ** Axios module configuration
   */
   axios: {
-    host: 'localhost',
-    port: '3001',
-    prefix: '/api/v1/',
+    proxy: true
+  },
 
-    retry: { retries: 3 }
+  proxy: {
+    '/api/': {
+      target: 'http://api:3000/',
+      pathRewrite: {'^/api/': '/api/v1/'}
+    }
   },
 
   /*
@@ -65,9 +68,9 @@ module.exports = {
     strategies: {
       local: {
         endpoints: {
-          login: { url: '/auth/login', method: 'post'},
-          logout: { ur: '/auth/logout', method: 'delete' },
-          user: { url: '/auth/current', method: 'get' }
+          login: { url: '/api/auth/login', method: 'post'},
+          logout: { ur: '/api/auth/logout', method: 'delete' },
+          user: { url: '/api/auth/current', method: 'get' }
         }
       }
     }
