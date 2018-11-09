@@ -13,7 +13,7 @@
   * belongs_to :user
   * has_many :communities
   * has_many :technologies
-  * has_may :needed_skills
+  * has_many :needed_skills
   * has_many :links
   * title :string
   * issue_area :enum (Civic, Cultural, Economy, ...)
