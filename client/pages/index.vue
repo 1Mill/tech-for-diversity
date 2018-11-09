@@ -1,5 +1,16 @@
+<script>
+import ProjectList from '@/components/ProjectList'
+
+export default {
+	components: {
+		ProjectList
+	}
+}
+
+</script>
+
 <template>
-	<div>
-		Index
-	</div>
+	<v-layout>
+		<project-list/>
+	</v-layout>
 </template>
