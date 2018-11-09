@@ -1,9 +1,9 @@
 Fabricator(:project) do
   title          "MyString"
-  issue_area     1
+  issue_area     { Project.issue_areas.keys.sample }
   location_city  "MyString"
-  location_state 1
-  status         1
+  location_state { Project.location_states.keys.sample }
+  status         { Project.statuses.keys.sample }
   homepage       "MyString"
   description    "MyText"
 end
