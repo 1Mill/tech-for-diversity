@@ -5,5 +5,5 @@ Fabricator(:project) do
   location_state { Project.location_states.keys.sample }
   status         { Project.statuses.keys.sample }
   homepage       "MyString"
-  description    "MyText"
+  description    { Faker::Markdown.sandwich(6, 3) }
 end

@@ -40,6 +40,9 @@ group :development, :test do
 
   # Object generation framework for ActiveRecord, Mongoid, DataMapper, Sequel, or any other Ruby object.
   gem 'fabrication', '~> 2.20', '>= 2.20.1'
+
+  # Easily generate fake data: names, addresses, phone numbers, etc.
+  gem 'faker', '~> 1.9', '>= 1.9.1'
 end
 
 group :development do
