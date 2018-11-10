@@ -16,7 +16,7 @@ export default {
 </script>
 
 <template>
-	<v-container grid-list-md fluid>
+	<v-container grid-list-lg fluid>
 		<v-layout row wrap>
 			<v-flex xs12
 			v-for='project in projects' :key='project.id'
