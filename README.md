@@ -4,6 +4,9 @@
 
 1. For some reason "/api/v1/auth/login" generates a JWT token, but "/auth/login/" does not (when the path scope is changed).
 
+# Things to return to
+1. Upload images using Carrrier Wave + MiniMagick for projects
+
 # Outline of backend
 ## User
   * Email + Passowrd (Devise JWT)
@@ -22,6 +25,7 @@
   * status :enum
   * homepage :string
   * description :text (? support markdown on render)
+  * image :string (User CarrierWave + MiniMagick + S3)
 
 ## Community
   * belongs_to :project
