@@ -32,7 +32,7 @@ export default {
 		</v-card-title>
 		<v-card-actions>
 			<v-btn class='[ orange lighten-3 ]'
-			@click=''
+			:to='`/projects/${project.id}`'
 			>
 				Learn more
 			</v-btn>
