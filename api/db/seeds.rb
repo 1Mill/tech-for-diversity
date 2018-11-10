@@ -8,6 +8,6 @@
 
 Project.find_each(&:destroy)
 
-13.times do |n|
+50.times do |n|
 	Fabricate(:project).save
 end
