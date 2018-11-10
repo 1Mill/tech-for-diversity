@@ -21,7 +21,9 @@ export default {
 			<v-flex xs12
 			v-for='project in projects' :key='project.id'
 			>
-				<project-list-card/>
+				<project-list-card
+				:project='project'
+				/>
 			</v-flex>
 		</v-layout>
         </v-container>
