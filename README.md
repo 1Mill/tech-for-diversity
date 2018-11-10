@@ -4,6 +4,8 @@
 
 1. For some reason "/api/v1/auth/login" generates a JWT token, but "/auth/login/" does not (when the path scope is changed).
 
+1. Add 404 redict to client/projects/:id path. This way when a project does not exist, it goes to 404 instead. Currently there is a temp fix, but may have to use asyncData with Axios (instead of retreieving information from store) to use error / callback method. 
+
 # Things to return to
 1. Upload images using Carrrier Wave + MiniMagick for projects
 
