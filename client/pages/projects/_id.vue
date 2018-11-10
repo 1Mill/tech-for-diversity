@@ -37,11 +37,14 @@ export default {
 		<span v-if='this.project != null'>
 			{{ project }}
 
-		<project-description></project-description>
-		<project-header></project-header>
-		<project-link-list></project-link-list>
-		<project-skill-list></project-skill-list>
-		<project-technology-list></project-technology-list>
+			<project-header
+			:project='project'
+			/>
+
+			<project-link-list></project-link-list>
+			<project-skill-list></project-skill-list>
+			<project-technology-list></project-technology-list>
+			<project-description></project-description>
 		</span>
 		<span v-else>
 			<h1 class='[ display-1 ]'>
