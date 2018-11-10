@@ -6,6 +6,7 @@ import ProjectHeader from '@/components/project/ProjectHeader'
 import ProjectLinkList from '@/components/project/ProjectLinkList'
 import ProjectSkillList from '@/components/project/ProjectSkillList'
 import ProjectTechnologyList from '@/components/project/ProjectTechnologyList'
+import RenderMarkdown from '@/components/RenderMarkdown'
 
 export default {
 	components: {
@@ -13,7 +14,8 @@ export default {
 		ProjectHeader,
 		ProjectLinkList,
 		ProjectSkillList,
-		ProjectTechnologyList
+		ProjectTechnologyList,
+		RenderMarkdown
 	},
 	data () {
 		return {
@@ -45,6 +47,11 @@ export default {
 			<project-skill-list></project-skill-list>
 			<project-technology-list></project-technology-list>
 			<project-description></project-description>
+
+			<render-markdown
+			:text='project.description'
+			/>
+
 		</span>
 		<span v-else>
 			<h1 class='[ display-1 ]'>

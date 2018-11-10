@@ -45,7 +45,8 @@ module.exports = {
   modules: [
     // Doc: https://github.com/nuxt-community/axios-module#usage
     '@nuxtjs/auth',
-    '@nuxtjs/axios'
+    '@nuxtjs/axios',
+    '@nuxtjs/markdownit'
   ],
 
   /*
@@ -75,6 +76,13 @@ module.exports = {
         }
       }
     }
+  },
+
+  /*
+  ** markdownit module configuration
+  */
+  markdownit: {
+    injected: true
   },
 
   /*
