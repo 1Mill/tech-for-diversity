@@ -7,3 +7,9 @@ export const mutations = {
 		state.projects = projects
 	}
 }
+
+export const getters = {
+	getProjectById: (state) => (id) => {
+		return _.find(state.projects, project => { return project.id == id })
+	}
+}

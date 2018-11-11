@@ -1,5 +1,5 @@
 <script>
-import { mapState } from 'vuex'
+import { mapState, mapGetters } from 'vuex'
 
 import ProjectDescription from '@/components/project/ProjectDescription'
 import ProjectHeader from '@/components/project/ProjectHeader'
@@ -23,13 +23,13 @@ export default {
 		}
 	},
 	computed: {
-		...mapState ('projects', [
-			'projects'
+		...mapGetters ('projects', [
+			'getProjectById'
 		])
 	},
 	created () {
 		const id = this.$route.params.id
-		this.project = _.find(this.projects, project => { return project.id == id })
+		this.project = this.getProjectById(id)
 	}
 }
 </script>
@@ -49,7 +49,7 @@ export default {
 			<project-description></project-description>
 
 			<render-markdown
-			:text='project.description'
+			:text='project.description + " "'
 			/>
 
 		</span>
