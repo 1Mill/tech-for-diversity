@@ -31,6 +31,9 @@ gem 'rack-cors', '~> 1.0', '>= 1.0.2'
 # JWT token authentication with devise and rails
 gem 'devise-jwt', '~> 0.5.8'
 
+# Object oriented authorization for Rails applications
+gem 'pundit', '~> 2.0'
+
 group :development, :test do
   # Call 'byebug' anywhere in the code to stop execution and get a debugger console
   gem 'byebug', platforms: [:mri, :mingw, :x64_mingw]
