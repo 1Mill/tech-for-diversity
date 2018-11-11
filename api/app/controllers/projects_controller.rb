@@ -41,6 +41,12 @@ class ProjectsController < ApplicationController
     @project.destroy
   end
 
+  # Get /all_projects
+  def all_projects
+    @projects = Project.all
+    render 'index'
+  end
+
   private
     # Use callbacks to share common setup or constraints between actions.
     def set_project
