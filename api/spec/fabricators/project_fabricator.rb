@@ -1,4 +1,6 @@
 Fabricator(:project) do
+  user
+
   title          { Faker::VentureBros.organization }
   issue_area     { Project.issue_areas.keys.sample }
   location_city  { Faker::HarryPotter.location }
