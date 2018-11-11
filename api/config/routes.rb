@@ -13,6 +13,8 @@ Rails.application.routes.draw do
 			get 'auth/current', :to => 'users/sessions#show'
 		end
 
-		resources :projects
+		resources :users, :shallow => true do
+			resources :projects
+		end
 	end
 end
