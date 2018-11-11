@@ -6,8 +6,8 @@
 #   movies = Movie.create([{ name: 'Star Wars' }, { name: 'Lord of the Rings' }])
 #   Character.create(name: 'Luke', movie: movies.first)
 
-Project.find_each(&:destroy)
+User.find_each(&:destroy)
 
-50.times do |n|
-	Fabricate(:project).save
+11.times do
+	Fabricate(:user).save
 end
