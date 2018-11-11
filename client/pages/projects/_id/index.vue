@@ -17,11 +17,6 @@ export default {
 		ProjectTechnologyList,
 		RenderMarkdown
 	},
-	data () {
-		return {
-			project: {}
-		}
-	},
 	computed: {
 		...mapGetters ('projects', [
 			'getProjectById'
