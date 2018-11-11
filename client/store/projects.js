@@ -3,7 +3,7 @@ export const state = () => ({
 })
 
 export const mutations = {
-	SET (state, payload) {
-		state.projects = payload
+	GET (state, projects) {
+		state.projects = projects
 	}
 }
