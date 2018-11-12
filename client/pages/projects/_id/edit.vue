@@ -1,15 +1,17 @@
 <script>
-import { mapGetters } from 'vuex'
+import { mapActions, mapGetters } from 'vuex'
 
 export default {
 	data () {
 		return {
-			title: null,
-			issue_area: null,
-			location_city: null,
-			location_state: null,
-			status: null,
-			description: null
+			project: {
+				title: null,
+				issue_area: null,
+				location_city: null,
+				location_state: null,
+				status: null,
+				description: null
+			}
 		}
 	},
 	computed: {
@@ -26,12 +28,15 @@ export default {
 		// 2. Break down mutli-demtnional array to single array (e.g. [["title", "Something"], ["description", "Crazy stuff"]] => ["title":"Something", "description":"CrazyStuff"])
 		// 3. Assign key-pairs to data (e.g. this.title = array['title'])
 		// This allows us to (a) initilize data and (b) make it reactive
-		_.assign(this, _.fromPairs(_.toPairsIn(project)))
+		_.assign(this.project, _.fromPairs(_.toPairsIn(project)))
 
 	},
 	methods: {
+		...mapActions ('projects', [
+			'updateProject'
+		]),
 		submitForm () {
-			console.log('Edits submitted')
+			this.updateProject(this.project)
 		}
 	}
 }
@@ -43,6 +48,33 @@ export default {
 			<v-btn type='submit'>
 				Submit
 			</v-btn>
+
+			<v-text-field
+			v-model='project.title'
+			label='Title'
+			/>
+
+			<v-textarea auto-grow
+			v-model='project.description'
+			label='Description'
+			/>
+
+			<v-text-field
+			v-model='project.issue_area'
+			label='issue_area'
+			/>
+			<v-text-field
+			v-model='project.location_city'
+			label='location_city'
+			/>
+			<v-text-field
+			v-model='project.location_state'
+			label='location_state'
+			/>
+			<v-text-field
+			v-model='project.status'
+			label='status'
+			/>
 		</v-form>
 	</v-container>
 </template>
