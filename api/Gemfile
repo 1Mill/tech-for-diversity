@@ -31,6 +31,9 @@ gem 'rack-cors', '~> 1.0', '>= 1.0.2'
 # JWT token authentication with devise and rails
 gem 'devise-jwt', '~> 0.5.8'
 
+# Simple authorization solution for Rails.
+# gem 'cancancan', '~> 2.3'
+
 group :development, :test do
   # Call 'byebug' anywhere in the code to stop execution and get a debugger console
   gem 'byebug', platforms: [:mri, :mingw, :x64_mingw]
@@ -40,6 +43,9 @@ group :development, :test do
 
   # Object generation framework for ActiveRecord, Mongoid, DataMapper, Sequel, or any other Ruby object.
   gem 'fabrication', '~> 2.20', '>= 2.20.1'
+
+  # Easily generate fake data: names, addresses, phone numbers, etc.
+  gem 'faker', '~> 1.9', '>= 1.9.1'
 end
 
 group :development do
@@ -48,7 +54,6 @@ group :development do
   gem 'spring'
   gem 'spring-watcher-listen', '~> 2.0.0'
 end
-
 
 # Windows does not include zoneinfo files, so bundle the tzinfo-data gem
 gem 'tzinfo-data', platforms: [:mingw, :mswin, :x64_mingw, :jruby]

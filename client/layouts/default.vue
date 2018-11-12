@@ -11,11 +11,11 @@ export default {
 <template>
 	<div id='app'>
 		<v-app>
-			<the-nav/>
-
 			<v-container>
 				<nuxt/>
 			</v-container>
+
+			<the-nav/>
 		</v-app>
 	</div>
 </template>

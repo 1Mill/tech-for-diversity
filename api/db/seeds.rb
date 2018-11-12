@@ -5,3 +5,11 @@
 #
 #   movies = Movie.create([{ name: 'Star Wars' }, { name: 'Lord of the Rings' }])
 #   Character.create(name: 'Luke', movie: movies.first)
+
+User.find_each(&:destroy)
+
+11.times do
+	Fabricate(:user).save
+end
+
+Fabricate(:user, :email => 'test@html.erb', :password => 'password')
