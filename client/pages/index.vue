@@ -1,5 +1,16 @@
+<script>
+import ProjectIndex from '@/components/ProjectIndex'
+
+export default {
+	components: {
+		ProjectIndex
+	}
+}
+
+</script>
+
 <template>
-	<div>
-		Index
-	</div>
+	<v-layout>
+		<project-index/>
+	</v-layout>
 </template>

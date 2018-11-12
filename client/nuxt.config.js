@@ -1,4 +1,5 @@
 const pkg = require('./package')
+const webpack = require('webpack')
 
 module.exports = {
   mode: 'universal',
@@ -44,18 +45,22 @@ module.exports = {
   modules: [
     // Doc: https://github.com/nuxt-community/axios-module#usage
     '@nuxtjs/auth',
-    '@nuxtjs/axios'
+    '@nuxtjs/axios',
+    '@nuxtjs/markdownit'
   ],
 
   /*
   ** Axios module configuration
   */
   axios: {
-    host: 'localhost',
-    port: '3001',
-    prefix: '/api/v1/',
+    proxy: true
+  },
 
-    retry: { retries: 3 }
+  proxy: {
+    '/api/': {
+      target: 'http://api:3000/',
+      pathRewrite: {'^/api/': '/api/v1/'}
+    }
   },
 
   /*
@@ -65,12 +70,19 @@ module.exports = {
     strategies: {
       local: {
         endpoints: {
-          login: { url: '/auth/login', method: 'post'},
-          logout: { ur: '/auth/logout', method: 'delete' },
-          user: { url: '/auth/current', method: 'get' }
+          login: { url: '/api/auth/login', method: 'post'},
+          logout: { ur: '/api/auth/logout', method: 'delete' },
+          user: { url: '/api/auth/current', method: 'get' }
         }
       }
     }
+  },
+
+  /*
+  ** markdownit module configuration
+  */
+  markdownit: {
+    injected: true
   },
 
   /*
@@ -81,7 +93,13 @@ module.exports = {
     ** You can extend webpack config here
     */
     extend(config, ctx) {
-    }
+    },
+
+    plugins: [
+      new webpack.ProvidePlugin({
+        '_': 'lodash'
+      })
+    ]
   },
 
   /*
