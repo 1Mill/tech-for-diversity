@@ -1,7 +1,7 @@
 <script>
 import { mapState } from 'vuex'
 
-import ProjectListCard from '@/components/ProjectIndexCard'
+import ProjectIndexCard from '@/components/ProjectIndexCard'
 
 export default {
 	components: {

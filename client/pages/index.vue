@@ -1,5 +1,5 @@
 <script>
-import ProjectList from '@/components/ProjectIndex'
+import ProjectIndex from '@/components/ProjectIndex'
 
 export default {
 	components: {
