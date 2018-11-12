@@ -43,7 +43,7 @@ class ProjectsController < ApplicationController
 
   # Get /all_projects
   def all_projects
-    @projects = Project.all
+    @projects = Project.all.order(updated_at: :desc)
     render 'index'
   end
 
