@@ -1,9 +1,9 @@
 <script>
-import ProjectList from '@/components/ProjectList'
+import ProjectList from '@/components/ProjectIndex'
 
 export default {
 	components: {
-		ProjectList
+		ProjectIndex
 	}
 }
 
@@ -11,6 +11,6 @@ export default {
 
 <template>
 	<v-layout>
-		<project-list/>
+		<project-index/>
 	</v-layout>
 </template>

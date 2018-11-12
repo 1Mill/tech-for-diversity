@@ -1,11 +1,11 @@
 <script>
 import { mapState } from 'vuex'
 
-import ProjectListCard from '@/components/ProjectListCard'
+import ProjectListCard from '@/components/ProjectIndexCard'
 
 export default {
 	components: {
-		ProjectListCard
+		ProjectIndexCard
 	},
 	computed: {
 		...mapState ('projects', [
@@ -21,7 +21,7 @@ export default {
 			<v-flex xs12
 			v-for='project in projects' :key='project.id'
 			>
-				<project-list-card
+				<project-index-card
 				:project='project'
 				/>
 			</v-flex>
