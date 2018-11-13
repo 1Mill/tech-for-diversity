@@ -35,8 +35,11 @@ export default {
 		...mapActions ('projects', [
 			'updateProject'
 		]),
-		submitForm () {
-			this.updateProject(this.project)
+		async submitForm () {
+			await this.updateProject(this.project)
+			this.$router.replace({
+				path: '/projects/' + this.project.id
+			})
 		}
 	}
 }
