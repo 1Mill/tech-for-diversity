@@ -19,13 +19,13 @@ export default {
 			</v-flex>
 			<v-layout column>
 				<v-flex>
-					<h1 class='[ subheading ]'>Issue area: {{ project.issue_area }}</h1>
+					<h1 class='[ caption ]'>Issue area: {{ project.issue_area }}</h1>
 				</v-flex>
 				<v-flex>
-					<h1 class='[ subheading ]'>Project Stage: {{ project.status }}</h1>
+					<h1 class='[ caption ]'>Project Stage: {{ project.status }}</h1>
 				</v-flex>
 				<v-flex>
-					<h1 class='[ subheading ]'>Communities: Being help listed here</h1>
+					<h1 class='[ caption ]'>Communities: Being help listed here</h1>
 				</v-flex>
 			</v-layout>
 			<v-layout column>
