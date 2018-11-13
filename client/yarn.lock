@@ -658,6 +658,18 @@
     lodash "^4.17.10"
     to-fast-properties "^2.0.0"
 
+"@casl/ability@^2.5.1":
+  version "2.5.1"
+  resolved "https://registry.yarnpkg.com/@casl/ability/-/ability-2.5.1.tgz#53f12af45295793472c65b539204226372904594"
+  integrity sha512-Ju1cl1R4xgPiiYxmjUAoO+rhNxp0ximyKZzWuw4/DLKHnbQNqbSVyDkRSVHuAuL+BWyeBsaD/sVSwxUitYlDyA==
+  dependencies:
+    sift "^7.0.1"
+
+"@casl/vue@^0.4.3":
+  version "0.4.3"
+  resolved "https://registry.yarnpkg.com/@casl/vue/-/vue-0.4.3.tgz#db212759a7b1ed05e2cd57d27b6f6cbee28645e5"
+  integrity sha512-6rI8Ot98aKPbeAqtQuuxvnsE4itQmyfnt2SNlqhWg0lm4tvQZBrPCKq0gM/9bWBPsH1AS43gwKPnsyen08KYmQ==
+
 "@csstools/convert-colors@^1.4.0":
   version "1.4.0"
   resolved "https://registry.yarnpkg.com/@csstools/convert-colors/-/convert-colors-1.4.0.tgz#ad495dc41b12e75d588c6db8b9834f08fa131eb7"
@@ -5874,6 +5886,11 @@ shell-quote@^1.6.1:
     array-map "~0.0.0"
     array-reduce "~0.0.0"
     jsonify "~0.0.0"
+
+sift@^7.0.1:
+  version "7.0.1"
+  resolved "https://registry.yarnpkg.com/sift/-/sift-7.0.1.tgz#47d62c50b159d316f1372f8b53f9c10cd21a4b08"
+  integrity sha512-oqD7PMJ+uO6jV9EQCl0LrRw1OwsiPsiFQR5AR30heR+4Dl7jBBbDLnNvWiak20tzZlSE1H7RB30SX/1j/YYT7g==
 
 signal-exit@^3.0.0, signal-exit@^3.0.2:
   version "3.0.2"

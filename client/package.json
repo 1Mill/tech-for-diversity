@@ -11,6 +11,8 @@
     "generate": "nuxt generate"
   },
   "dependencies": {
+    "@casl/ability": "^2.5.1",
+    "@casl/vue": "^0.4.3",
     "@nuxtjs/auth": "^4.5.3",
     "@nuxtjs/axios": "^5.0.0",
     "@nuxtjs/markdownit": "^1.2.2",
