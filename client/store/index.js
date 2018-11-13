@@ -1,4 +1,7 @@
+import { abilityPlugin } from './ability'
+
 export const state = () => ({
+	rules: []
 })
 
 export const actions = {
@@ -23,3 +26,7 @@ export const actions = {
 		await this.$auth.logout()
 	}
 }
+
+export const plugins = [
+	abilityPlugin
+]
