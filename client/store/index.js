@@ -32,12 +32,12 @@ export const actions = {
 			console.log(e)
 		})
 
-		dispatch('getUserRules')
+		await dispatch('getUserRules')
 	},
 	async logoutUser ({ dispatch }) {
 		await this.$auth.logout()
 
-		dispatch('getUserRules')
+		await dispatch('getUserRules')
 	}
 }
 

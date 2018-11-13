@@ -21,7 +21,7 @@ export const actions = {
 			console.log(e)
 		})
 
-		dispatch('getProjects')
+		await dispatch('getProjects')
 	}
 }
 
