@@ -16,7 +16,7 @@ export default {
 
 <template>
 	<v-card>
-		<v-img
+		<v-img gradient="to top right, rgba(0,0,0,0.3), rgba(0,0,0,0.3)"
 		:src='`https://picsum.photos/${_.random(180, 220)}/200/?random`'
 		aspect-ratio='1.9'
 		>
