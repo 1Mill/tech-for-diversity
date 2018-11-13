@@ -20,9 +20,9 @@ export default {
 		:src='`https://picsum.photos/${_.random(180, 220)}/200/?random`'
 		aspect-ratio='1.9'
 		>
-			<v-container fill-height fluid>
-				<v-layout fill-height>
-					<v-flex xs12 align-end flexbox>
+			<v-container fluid>
+				<v-layout column>
+					<v-flex>
 						<h1 class='[ headline white--text ]' style='text-shadow: 1px 1px 5px black;'>{{ project.title }}</h1>
 					</v-flex>
 				</v-layout>
@@ -32,10 +32,16 @@ export default {
 			<v-container fluid>
 				<v-layout column>
 					<v-flex>
-						Issue: {{ project.issue_area }}
+						Issue:
+						<span class='[ font-weight-bold ]'>
+							{{ project.issue_area }}
+						</span>
 					</v-flex>
 					<v-flex>
-						Stage: {{ project.status }}
+						Stage:
+						<span class='[ font-weight-bold ]'>
+							{{ project.status }}
+						</span>
 					</v-flex>
 					<v-flex>
 						<v-icon>place</v-icon>
