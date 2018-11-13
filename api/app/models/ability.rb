@@ -5,7 +5,7 @@ class Ability
 		can :read, :all
 
 		if user.present?
-			can :manage, Project, :user_id => user.id
+			can :manage, :all, :user_id => user.id
 		end
 	end
 

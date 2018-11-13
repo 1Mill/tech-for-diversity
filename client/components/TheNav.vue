@@ -9,7 +9,7 @@ export default {
 		return {
 			open: false,
 
-			loginDialog: false,
+			loginDialog: true,
 
 			links: [
 				{name: 'Home', to: '/'},

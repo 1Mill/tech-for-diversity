@@ -17,7 +17,7 @@ export default {
 <template>
 	<v-card>
 		<v-img
-		:src='`https://picsum.photos/${_.random(170, 220)}/200/?random`'
+		:src='`https://picsum.photos/200/200/?random`'
 		aspect-ratio='1.9'
 		>
 			<v-container fill-height fluid>
@@ -48,5 +48,19 @@ export default {
 				Share
 			</v-btn>
 		</v-card-actions>
+
+		<div>
+			{{ $auth.user }} ::: {{ project.user_id }}
+
+		</div>
+
+		<can I='read' :this='project'>
+			read?
+		</can>
+		<can I='manage' :this='project'>
+			<div>
+				manage?
+			</div>
+		</can>
 	</v-card>
 </template>

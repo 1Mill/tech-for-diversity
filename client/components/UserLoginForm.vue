@@ -4,8 +4,8 @@ import { mapActions } from 'vuex'
 export default {
 	data () {
 		return {
-			email: '',
-			password: '',
+			email: 'test@html.erb',
+			password: 'password',
 			error: null
 		}
 	},
