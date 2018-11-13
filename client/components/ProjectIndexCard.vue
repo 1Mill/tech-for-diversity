@@ -23,7 +23,7 @@ export default {
 			<v-container fill-height fluid>
 				<v-layout fill-height>
 					<v-flex xs12 align-end flexbox>
-						<h1 class='[ headline white--text ]'>{{ project.title }}</h1>
+						<h1 class='[ headline white--text ]' style='text-shadow: 1px 1px 5px black;'>{{ project.title }}</h1>
 					</v-flex>
 				</v-layout>
 			</v-container>
