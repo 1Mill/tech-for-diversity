@@ -11,11 +11,9 @@ export const mutations = {
 }
 
 export const actions = {
-	async nuxtServerInit ({ commit, dispatch }) {
-		const data = await this.$axios.$get(`/api/all_projects`)
-		commit('projects/GET', data)
-
-		dispatch('getUserRules')
+	async nuxtServerInit ({ dispatch }) {
+		await dispatch('projects/getProjects')
+		await dispatch('getUserRules')
 	},
 	async getUserRules ({ commit }) {
 		const data = await this.$axios.$get(`/api/auth/current`)
