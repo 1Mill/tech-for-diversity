@@ -32,9 +32,11 @@ export default {
 			<v-container fluid>
 				<v-layout column>
 					<v-flex>
-						Issue area: {{ project.issue_area }}
+						Issue: {{ project.issue_area }}
 					</v-flex>
-
+					<v-flex>
+						Stage: {{ project.status }}
+					</v-flex>
 					<v-flex>
 						<v-icon>place</v-icon>
 						{{ project.location_city }}, {{ project.location_state }}
