@@ -17,7 +17,7 @@ export default {
 <template>
 	<v-card>
 		<v-img
-		:src='`https://picsum.photos/200/200/?random`'
+		:src='`https://picsum.photos/${_.random(180, 220)}/200/?random`'
 		aspect-ratio='1.9'
 		>
 			<v-container fill-height fluid>
