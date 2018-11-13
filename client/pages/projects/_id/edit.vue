@@ -29,7 +29,6 @@ export default {
 		// 3. Assign key-pairs to data (e.g. this.title = array['title'])
 		// This allows us to (a) initilize data and (b) make it reactive
 		_.assign(this.project, _.fromPairs(_.toPairsIn(project)))
-
 	},
 	methods: {
 		...mapActions ('projects', [
