@@ -1,4 +1,5 @@
 class ProjectsController < ApplicationController
+  load_and_authorize_resource :except => :all_projects
   before_action :set_project, only: [:show, :update, :destroy]
   before_action :set_user, only: [:index, :create]
 

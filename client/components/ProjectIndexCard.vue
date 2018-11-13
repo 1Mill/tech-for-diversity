@@ -17,7 +17,7 @@ export default {
 <template>
 	<v-card>
 		<v-img
-		:src='`https://picsum.photos/${_.random(170, 220)}/200/?random`'
+		:src='`https://picsum.photos/${_.random(180, 220)}/200/?random`'
 		aspect-ratio='1.9'
 		>
 			<v-container fill-height fluid>
@@ -36,17 +36,32 @@ export default {
 			Last updated: {{ project.updated_at }}
 		</v-card-title>
 		<v-card-actions>
-			<v-btn class='[ orange lighten-3 ]'
-			:to='`/projects/${project.id}`'
-			>
-				Learn more
-			</v-btn>
-			<v-spacer/>
-			<v-btn flat
-			@click=''
-			>
-				Share
-			</v-btn>
+			<v-container>
+				<v-layout>
+					<v-flex>
+						<v-btn class='[ orange lighten-3 ]'
+						:to='`/projects/${project.id}`'
+						>
+							Learn more
+						</v-btn>
+					</v-flex>
+
+					<v-flex>
+						<v-btn flat
+						@click=''
+						>
+							Share
+						</v-btn>
+					</v-flex>
+				</v-layout>
+			</v-container>
+			<can I='manage' :this='project'>
+				<v-btn absolute fab top right small class='[ green lighten-4 ]'
+				:to='`/projects/${project.id}/edit`'
+				>
+					<v-icon>create</v-icon>
+				</v-btn>
+			</can>
 		</v-card-actions>
 	</v-card>
 </template>

@@ -9,13 +9,19 @@ export const mutations = {
 }
 
 export const actions = {
-	updateProject: function (context, project) {
-		this.$axios.patch(`/api/projects/${project.id}`, {
+	async getProjects ({ commit }) {
+		const data = await this.$axios.$get(`/api/all_projects`)
+		commit('GET', data)
+	},
+	async updateProject ({ dispatch }, project) {
+		await this.$axios.patch(`/api/projects/${project.id}`, {
 			project
 		})
 		.catch(e => {
 			console.log(e)
 		})
+
+		await dispatch('getProjects')
 	}
 }
 
