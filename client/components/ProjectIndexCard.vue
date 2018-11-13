@@ -29,14 +29,24 @@ export default {
 			</v-container>
 		</v-img>
 		<v-card-title>
-			Issue area: {{ project.issue_area }}
+			<v-container fluid>
+				<v-layout column>
+					<v-flex>
+						Issue area: {{ project.issue_area }}
+					</v-flex>
 
-			Location {{ project.location_city }} {{ project.location_state }}
-
-			Last updated: {{ project.updated_at }}
+					<v-flex>
+						<v-icon>place</v-icon>
+						{{ project.location_city }}, {{ project.location_state }}
+					</v-flex>
+					<v-flex>
+						Updated: {{ $moment(project.updated_at).format('LL') }}
+					</v-flex>
+				</v-layout>
+			</v-container>
 		</v-card-title>
 		<v-card-actions>
-			<v-container>
+			<v-container fluid>
 				<v-layout>
 					<v-flex>
 						<v-btn class='[ orange lighten-3 ]'
