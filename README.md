@@ -15,28 +15,28 @@ itself tracking project states (e.g. open, in progress, complete).
 ## Business Owner
 1. Create user account as business owner
 1. Create project listing
-  * Contact information
-    * name of business
-    * email
-    * phone
-    * prefered languages
-  * Business information
-    * type of business (restaurant, tailor, etc.)
-    * what is your mission statement?
-    * Who You Are
-    * Who You Help
-    * What You Do
-  * Technical questions
-    * what are your expectations from this quest? (may already be defined by platform mission)
-    * are you currently using any services (e.g. WordPress, etc.)?
-    * how frequently do you think you will update your website (gain scope of user access / maintenance needs; WordPress vs. GitHub pages)
-    * provide links so your social media pages
-    * do you have a website domain name?
+    * Contact information
+      * name of business
+      * email
+      * phone
+      * prefered languages
+    * Business information
+      * type of business (restaurant, tailor, etc.)
+      * what is your mission statement?
+      * Who You Are
+      * Who You Help
+      * What You Do
+    * Technical questions
+      * what are your expectations from this quest? (may already be defined by platform mission)
+      * are you currently using any services (e.g. WordPress, etc.)?
+      * how frequently do you think you will update your website (gain scope of user access / maintenance needs; WordPress vs. GitHub pages)
+      * provide links so your social media pages
+      * do you have a website domain name?
 1. What services do you need?
-  * Logo design
-  * Website (re-)design
-  * Translating information
-  * Creating social media accounts
+    * Logo design
+    * Website (re-)design
+    * Translating information
+    * Creating social media accounts
 1. Wait to be contacted
 
 ## Volunteer
