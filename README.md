@@ -1,4 +1,4 @@
-management# Getting started
+# Getting started
 1. Have docker-compose installed on your machine.
 1. Run `docker-compose up --build`
 1. Open `http://localhost:3000/` to view the client application.
