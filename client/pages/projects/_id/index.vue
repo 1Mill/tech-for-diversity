@@ -1,7 +1,6 @@
 <script>
 import { mapState, mapGetters } from 'vuex'
 
-import ProjectDescription from '@/components/project/ProjectDescription'
 import ProjectHeader from '@/components/project/ProjectHeader'
 import ProjectLinkList from '@/components/project/ProjectLinkList'
 import ProjectSkillList from '@/components/project/ProjectSkillList'
@@ -10,7 +9,6 @@ import RenderMarkdown from '@/components/RenderMarkdown'
 
 export default {
 	components: {
-		ProjectDescription,
 		ProjectHeader,
 		ProjectLinkList,
 		ProjectSkillList,
@@ -32,21 +30,21 @@ export default {
 <template>
 	<v-container>
 		<span v-if='this.project != null'>
-			{{ project }}
-
 			<project-header
 			:project='project'
 			/>
 
-			<project-link-list></project-link-list>
 			<project-skill-list></project-skill-list>
 			<project-technology-list></project-technology-list>
-			<project-description></project-description>
 
-			<render-markdown
-			:text='project.description + " "'
-			/>
+			<v-container>
+				<h1 class='[ headline ]'>Project Details</h1>
+				<render-markdown
+				:text='project.description + " "'
+				/>
+			</v-container>
 
+			<project-link-list></project-link-list>
 		</span>
 		<span v-else>
 			<h1 class='[ display-1 ]'>

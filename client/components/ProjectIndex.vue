@@ -18,7 +18,7 @@ export default {
 <template>
 	<v-container grid-list-lg fluid>
 		<v-layout row wrap>
-			<v-flex xs12
+			<v-flex xs12 md6 lg3
 			v-for='project in projects' :key='project.id'
 			>
 				<project-index-card

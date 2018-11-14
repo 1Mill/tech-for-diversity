@@ -29,7 +29,6 @@ export default {
 		// 3. Assign key-pairs to data (e.g. this.title = array['title'])
 		// This allows us to (a) initilize data and (b) make it reactive
 		_.assign(this.project, _.fromPairs(_.toPairsIn(project)))
-
 	},
 	methods: {
 		...mapActions ('projects', [
@@ -48,10 +47,6 @@ export default {
 <template>
 	<v-container>
 		<v-form @submit.prevent='submitForm'>
-			<v-btn type='submit'>
-				Submit
-			</v-btn>
-
 			<v-text-field
 			v-model='project.title'
 			label='Title'
@@ -78,6 +73,10 @@ export default {
 			v-model='project.status'
 			label='status'
 			/>
+
+			<v-btn type='submit' color='[ success ]'>
+				Submit
+			</v-btn>
 		</v-form>
 	</v-container>
 </template>
