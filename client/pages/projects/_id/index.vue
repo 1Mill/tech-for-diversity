@@ -34,6 +34,9 @@ export default {
 			:project='project'
 			/>
 
+			<project-skill-list></project-skill-list>
+			<project-technology-list></project-technology-list>
+
 			<v-container>
 				<h1 class='[ headline ]'>Project Details</h1>
 				<render-markdown
@@ -42,9 +45,6 @@ export default {
 			</v-container>
 
 			<project-link-list></project-link-list>
-			<project-skill-list></project-skill-list>
-			<project-technology-list></project-technology-list>
-
 		</span>
 		<span v-else>
 			<h1 class='[ display-1 ]'>
