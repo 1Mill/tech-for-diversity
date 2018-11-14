@@ -45,9 +45,9 @@ itself tracking project states (e.g. open, in progress, complete).
 1. Accept project (move project state to in-progress)
 1. Get contact information for business owner
 1. Things that happened outside the system
-  * Contact business owner
-  * Get project requirements / scope (the platform should get as much information as possible)
-  * Complete project
+    * Contact business owner
+    * Get project requirements / scope (the platform should get as much information as possible)
+    * Complete project
 1. Mark project as complete
 
 ## Admin
