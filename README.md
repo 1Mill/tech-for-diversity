@@ -19,7 +19,7 @@ itself tracking project states (e.g. open, in progress, complete).
       * name of business
       * email
       * phone
-      * prefered languages
+      * preferred languages
     * Business information
       * type of business (restaurant, tailor, etc.)
       * what is your mission statement?
