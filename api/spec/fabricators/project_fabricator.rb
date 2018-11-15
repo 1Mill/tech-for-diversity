@@ -22,5 +22,5 @@ Fabricator(:project) do
 
   current_services  "MyText"
   update_frequency  { Project.update_frequencies.keys.sample }
-  domain_registered false
+  domain_registered { [true, false].sample }
 end
