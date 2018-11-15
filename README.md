@@ -71,44 +71,38 @@ itself tracking project states (e.g. open, in progress, complete).
 ## Project (business)
   * belongs_to :user
   * has_one :volunteer (through ProjectVoltuneer join table)
-  * has_one :address
-  * has_one :contact_info
-  * has_one :business_info
-  * has_one :technical_info
   * has_many :links
   * has_many :services
-
-  * name :string
-  * stage :enum (open, in_progress, complete)
-
-## Address
-  * belong_to :project
-  * street_1 :string
-  * street_2 :string
-  * city :string
-  * state :enum
-  * zipcode :string
-
-## ContactInfo
-  * belong_to :project
   * has_many :prefered_languages
-  * email :string
-  * phone :string
 
-## BusinessInfo
-  * belongs_to :project
-  * kind :enum (restaurant, tailor, etc.)
-  * mission :text
-  * who_you_are :text
-  * who_you_help :text
-  * what_you_do :text
+  * Company info
+    * company :string
+    * stage :enum (open, in_progress, complete)
 
-## TechnicalInfo
-  * belongs_to :project
-  * expectations :text
-  * current_services :text
-  * update_frequency :enum (:rarely to :often, How frequently will they need to update their website?)
-  * domain_registered :boolean
+  * Owner info
+    * name_first :string
+    * name_last :string
+    * email :string
+    * phone :string
+
+  * Address Info
+    * address_street_1 :string
+    * address_street_2 :string
+    * address_city :string
+    * address_state :enum
+    * address_zipcode :string
+
+  * Business Info
+    * business_kind :enum (restaurant, tailor, etc.)
+    * mission :text
+    * who_you_are :text
+    * who_you_help :text
+    * what_you_do :text
+
+  * TechnicalInfo
+    * current_services :text
+    * update_frequency :enum (:rarely to :often, How frequently will they need to update their website?)
+    * domain_registered :boolean
 
 ## Services
   * belong_to :project
