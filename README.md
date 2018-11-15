@@ -60,43 +60,68 @@ itself tracking project states (e.g. open, in progress, complete).
 
 1. casl ability is not properly syncing between server and client renderings. Needs to be further explored. The current temp fix is to just log in and then log out or visa versa to reset ability rules after page reload.
 
-# Things to return to
-1. Upload images using Carrrier Wave + MiniMagick for projects
+1. Ensure CASL / CanCanCan permissions send over secure connections so they can not be modified in-route to front-end.
 
 # Outline of backend
 ## User
   * Email + Password (Devise JWT)
   * has_many :projects
-  * role :enum (business_owner, volunteer, admin)
+  * role :enum (:business_owner, :volunteer, :admin)
 
-## Project
+## Project (business)
   * belongs_to :user
-  * has_many :communities
-  * has_many :technologies
-  * has_many :needed_skills
+  * has_one :volunteer (through ProjectVoltuneer join table)
+  * has_one :address
+  * has_one :contact_info
+  * has_one :business_info
+  * has_one :technical_info
   * has_many :links
-  * title :string
-  * issue_area :enum (Civic, Cultural, Economy, ...)
-  * location_city :string
-  * location_state :enum
-  * status :enum
-  * homepage :string
-  * description :text (? support markdown on render)
-  * image :string (User CarrierWave + MiniMagick + S3)
+  * has_many :services
 
-## Community
-  * belongs_to :project
-  * name :enum
+  * name :string
+  * stage :enum (open, in_progress, complete)
 
-## NeededSkill
-  * belongs_to :project
-  * department :enum (buisness, data, software development, etc.)
-  * role :enum (buisness -> [fundraiser, marketing], data => [visulization, architect])
+## Address
+  * belong_to :project
+  * street_1 :string
+  * street_2 :string
+  * city :string
+  * state :enum
+  * zipcode :string
 
-## Technology
+## ContactInfo
+  * belong_to :project
+  * has_many :prefered_languages
+  * email :string
+  * phone :string
+
+## BusinessInfo
   * belongs_to :project
-  * name :enum
+  * kind :enum (restaurant, tailor, etc.)
+  * mission :text
+  * who_you_are :text
+  * who_you_help :text
+  * what_you_do :text
+
+## TechnicalInfo
+  * belongs_to :project
+  * expectations :text
+  * current_services :text
+  * update_frequency :enum (:rarely to :often, How frequently will they need to update their website?)
+  * domain_registered :boolean
+
+## Services
+  * belong_to :project
+  * name :enum (:logo, :website_redesign, :translating, :social_media, etc.)
+
+## ProjectVolunterJoin
+  * belongs_to :user
+  * belongs_to :volunteer, :as => :user
+
+## PreferedLanguage
+  * belongs_to :contact_info
+  * language :enum (or :string)
 
 ## Link
   * belongs_to :project
-  * url :string (validate includes HTTP)
+  * url :string (validate includes HTTP/S)
