@@ -23,7 +23,7 @@ export default {
 			<v-container fluid>
 				<v-layout column>
 					<v-flex>
-						<h1 class='[ headline white--text ]' style='text-shadow: 1px 1px 5px black;'>{{ project.title }}</h1>
+						<h1 class='[ headline white--text ]' style='text-shadow: 1px 1px 5px black;'>{{ project.name }}</h1>
 					</v-flex>
 				</v-layout>
 			</v-container>
@@ -32,20 +32,14 @@ export default {
 			<v-container fluid>
 				<v-layout column>
 					<v-flex>
-						Issue:
-						<span class='[ font-weight-bold ]'>
-							{{ project.issue_area }}
-						</span>
-					</v-flex>
-					<v-flex>
 						Stage:
 						<span class='[ font-weight-bold ]'>
-							{{ project.status }}
+							{{ project.stage }}
 						</span>
 					</v-flex>
 					<v-flex>
 						<v-icon>place</v-icon>
-						{{ project.location_city }}, {{ project.location_state }}
+						{{ project.address }}, {{ project.address }}
 					</v-flex>
 					<v-flex>
 						Updated: {{ $moment(project.updated_at).format('LL') }}
