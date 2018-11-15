@@ -11,7 +11,7 @@ Fabricator(:project) do
   address_street_1  { Faker::Address.street_address }
   address_street_2  { Faker::Address.secondary_address }
   address_city      { Faker::Address.city }
-  address_state     { Project.states.keys.sample }
+  address_state     { Project.address_states.keys.sample }
   address_zipcode   { Faker::Address.zip_code }
 
   company_kind      { Project.company_kinds.keys.sample }

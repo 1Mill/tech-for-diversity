@@ -7,7 +7,7 @@ class Project < ApplicationRecord
 		complete: 2
 	}
 
-	enum state: {
+	enum address_state: {
 		wa: 0
 	}
 
