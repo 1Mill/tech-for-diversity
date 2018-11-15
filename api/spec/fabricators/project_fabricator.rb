@@ -20,7 +20,7 @@ Fabricator(:project) do
   who_you_help      { Faker::Company.profession }
   what_you_do       { Faker::Company.industry }
 
-  current_services  "MyText"
+  current_services  { Faker::Lorem.paragraphs }
   update_frequency  { Project.update_frequencies.keys.sample }
   domain_registered { [true, false].sample }
 end
