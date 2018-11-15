@@ -65,7 +65,7 @@ itself tracking project states (e.g. open, in progress, complete).
 
 # Outline of backend
 ## User
-  * Email + Passowrd (Devise JWT)
+  * Email + Password (Devise JWT)
   * has_many :projects
   * role :enum (business_owner, volunteer, admin)
 
