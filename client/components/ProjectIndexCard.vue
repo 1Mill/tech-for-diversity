@@ -39,7 +39,7 @@ export default {
 					</v-flex>
 					<v-flex>
 						<v-icon>place</v-icon>
-						{{ project.address }}, {{ project.address }}
+						{{ project.address_city }}, {{ project.address_state }}
 					</v-flex>
 					<v-flex>
 						Updated: {{ $moment(project.updated_at).format('LL') }}
