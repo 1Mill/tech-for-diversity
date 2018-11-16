@@ -26,4 +26,5 @@ Fabricator(:project) do
 
   links(count: (0..2).to_a.sample) { Fabricate.build(:link) }
   languages(count: (0..3).to_a.sample) { Fabricate.build(:language) }
+  services(count: (0..3).to_a.sample) { Fabricate.build(:service) }
 end

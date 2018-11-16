@@ -4,6 +4,8 @@ class Project < ApplicationRecord
 		:dependent => :destroy
 	has_many :languages,
 		:dependent => :destroy
+	has_many :services,
+		:dependent => :destroy
 
 	enum stage: {
 		open: 0,

@@ -17,6 +17,7 @@ Rails.application.routes.draw do
 			resources :projects do
 				resources :languages
 				resources :links
+				resources :services
 			end
 		end
 
