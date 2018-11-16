@@ -118,4 +118,5 @@ itself tracking project states (e.g. open, in progress, complete).
 
 ## Link
   * belongs_to :project
-  * url :string (validate includes HTTP/S)
+  * route :string (validate includes HTTP/S)
+  * group :enum (:social_media, :homepage, etc.)

@@ -23,4 +23,6 @@ Fabricator(:project) do
   current_services  { Faker::Lorem.paragraphs }
   update_frequency  { Project.update_frequencies.keys.sample }
   domain_registered { [true, false].sample }
+
+  links(count: (0..2).to_a.sample) { Fabricate.build(:link) }
 end

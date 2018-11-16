@@ -14,7 +14,9 @@ Rails.application.routes.draw do
 		end
 
 		resources :users, :shallow => true do
-			resources :projects
+			resources :projects do
+				resources :links
+			end
 		end
 
 		get 'all_projects', :to => 'all_projects#index'
