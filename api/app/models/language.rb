@@ -1,6 +1,9 @@
 class Language < ApplicationRecord
 	belongs_to :project
 
+	validates :name,
+		:presence => true
+
 	enum name: {
 		chinese: 0,
 		spanish: 1,
