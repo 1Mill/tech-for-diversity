@@ -29,6 +29,7 @@ module.exports = {
   ** Global CSS
   */
   css: [
+    '@fortawesome/fontawesome-free/css/all.min.css',
     '~/assets/style/app.styl'
   ],
 
