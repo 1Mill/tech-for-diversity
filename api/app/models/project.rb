@@ -2,6 +2,8 @@ class Project < ApplicationRecord
 	belongs_to :user
 	has_many :links,
 		:dependent => :destroy
+	has_many :languages,
+		:dependent => :destroy
 
 	enum stage: {
 		open: 0,

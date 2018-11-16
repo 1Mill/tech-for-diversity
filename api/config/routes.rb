@@ -15,6 +15,7 @@ Rails.application.routes.draw do
 
 		resources :users, :shallow => true do
 			resources :projects do
+				resources :languages
 				resources :links
 			end
 		end

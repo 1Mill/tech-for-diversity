@@ -25,4 +25,5 @@ Fabricator(:project) do
   domain_registered { [true, false].sample }
 
   links(count: (0..2).to_a.sample) { Fabricate.build(:link) }
+  languages(count: (0..3).to_a.sample) { Fabricate.build(:language) }
 end
