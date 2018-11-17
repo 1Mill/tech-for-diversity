@@ -1,7 +1,29 @@
 # Getting started
-1. Have docker-compose installed on your machine
-1. Run `docker-compose run api bundle install` to install Ruby on Rails gems locally
-1. Run `docker-compose run client yarn install` to install Nuxt packages locally.
+## With this project
+This project uses Ruby on Rails as a back-end RESTful API and Nuxt to render and serve content to users.
+This project uses axios within Nuxt to share information between the back and front-ends. 
+Additionally, Devise-JWT within Rails and Auth within Nuxt is used to authenticate users (leveragins axios). 
+User permissions / rules are defined and enforced by CanCanCan in Rails, and on the front-end the CanCanCan rules are communicated by way of axios to set user permissions within Nuxt using Casl.
+
+### Axios
+This project uses the `@nuxtjs/axios` module to communicate with the backend Rails API. 
+
+### User Authentication
+Users are authenticated using `Devise-JWT` in Rails, with a JWT token being sent to the front-end on user login. On the front-end, `@nuxtjs/auth` is used with the `local` stratagy enabled to login / logout users. 
+
+### User Authorization
+There are 4 user types with differing permissions:
+1. Users not logged in: Read only
+1. Users logged in: 
+    * Business (default): Manage projects where `:user_id = user.id`
+    * Volunteer: Accept projects
+    * Admin: Manage all projects
+User permissions / rules are defined and enforced within Rails by the `CanCanCan` gem, and are trasfered to the front-end through the `/auth/current` API route (which gives the current logged in user) to be used by `@casle/vue` plugin. This plugin also enables the `<can>` HTML component that users defined user permissions to render content. 
+
+# Getting started with Docker Compose
+1. [Have docker-compose installed on your machine](https://www.docker.com/)
+1. Run `docker-compose run api bundle install` to install Ruby on Rails gems locally on your machine
+1. Run `docker-compose run client yarn install` to install Nuxt packages locally on your machine
 1. Run `docker-compose build` to build the container images
 1. Run `docker-compose up` to start the api and client docker services
 1. Open `http://localhost:3000/` to view the client application
