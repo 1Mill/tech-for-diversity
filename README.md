@@ -1,7 +1,10 @@
 # Getting started
-1. Have docker-compose installed on your machine.
-1. Run `docker-compose up --build`
-1. Open `http://localhost:3000/` to view the client application.
+1. Have docker-compose installed on your machine
+1. Run `docker-compose run api bundle install` to install Ruby on Rails gems locally
+1. Run `docker-compose run client yarn install` to install Nuxt packages locally.
+1. Run `docker-compose build` to build the container images
+1. Run `docker-compose up` to start the api and client docker services
+1. Open `http://localhost:3000/` to view the client application
 
 # Project Goal
 Connect local South Seattle business owners with people who know how to create
