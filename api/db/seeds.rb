@@ -12,4 +12,7 @@ User.find_each(&:destroy)
 	Fabricate(:user).save
 end
 
-Fabricate(:user, :email => 'test@html.erb', :password => 'password')
+Fabricate(:user, :email => 'bis@html.erb', :password => 'password', :role=>:business)
+Fabricate(:user, :email => 'admin@html.erb', :password => 'password', :role=>:admin) do
+	projects(count: 0)
+end
