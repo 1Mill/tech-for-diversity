@@ -12,4 +12,7 @@ class User < ApplicationRecord
 		volunteer: 1,
 		admin: 2
 	}
+
+	validates :role,
+		:presence => true
 end
