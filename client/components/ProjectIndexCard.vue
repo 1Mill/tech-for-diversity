@@ -19,6 +19,13 @@ export default {
 
 <template>
 	<v-card>
+		<can I='manage' :this='project'>
+			<v-btn
+			to='`/projects/${project.id}/edit`'
+			>
+				Edit
+			</v-btn>
+		</can>
 		<v-card-title primary-title>
 			<v-layout row>
 				<v-flex>
