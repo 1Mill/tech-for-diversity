@@ -38,36 +38,6 @@ export default {
 						</v-flex>
 					</v-layout>
 				</v-flex>
-				<v-flex>
-					<v-layout row wrap>
-						<v-chip
-						color=''
-						v-for='language in project.languages' :key='language.name'
-						>
-							{{ language.name }}
-						</v-chip>
-						<v-chip
-						class='[ info ]'
-						>
-							Testing
-						</v-chip>
-						<v-chip
-						class='[ success ]'
-						>
-							Testing
-						</v-chip>
-						<v-chip
-						class='[ warning ]'
-						>
-							Testing
-						</v-chip>
-						<v-chip
-						class='[ error ]'
-						>
-							Testing
-						</v-chip>
-					</v-layout>
-				</v-flex>
 			</v-layout>
 		</v-card-text>
 		<v-card-actions>
