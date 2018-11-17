@@ -13,6 +13,18 @@ export const actions = {
 		const data = await this.$axios.$get(`/api/all_projects`)
 		commit('GET', data)
 	},
+	async createProject ({ commit }, project) {
+		const user_id = this.$auth.user.id
+		console.log(user_id)
+
+		const data = await this.$axios.$post(`/api/users/${user_id}/projects/`, {
+			project
+		})
+
+		commit('GET', data)
+
+		return data.id
+	},
 	async updateProject ({ dispatch }, project) {
 		await this.$axios.patch(`/api/projects/${project.id}`, {
 			project
