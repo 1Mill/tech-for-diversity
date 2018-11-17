@@ -6,4 +6,10 @@ class User < ApplicationRecord
 
 	has_many :projects,
 		:dependent => :destroy
+
+	enum role: {
+		business: 0,
+		volunteer: 1,
+		admin: 2
+	}
 end
