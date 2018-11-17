@@ -18,7 +18,9 @@ export default {
 </script>
 
 <template>
-	<v-card>
+	<v-card
+	:to='`projects/${project.id}`'
+	>
 		<can I='manage' :this='project'>
 			<v-btn
 			:to='`/projects/${project.id}/edit`'
