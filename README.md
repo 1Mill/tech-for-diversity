@@ -18,6 +18,7 @@ There are 4 user types with differing permissions:
     * Business (default): Manage projects where `:user_id = user.id`
     * Volunteer: Accept projects
     * Admin: Manage all projects
+
 User permissions / rules are defined and enforced within Rails by the `CanCanCan` gem, and are trasfered to the front-end through the `/auth/current` API route (which gives the current logged in user) to be used by `@casle/vue` plugin. This plugin also enables the `<can>` HTML component that users defined user permissions to render content. 
 
 # Getting started with Docker Compose
