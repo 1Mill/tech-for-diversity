@@ -5,7 +5,17 @@ class Ability
 		can :read, :all
 
 		if user.present?
-			can :manage, :all, :user_id => user.id
+			if user.business?
+				can :manage, :all, :user_id => user.id
+			end
+
+			if user.volunteer?
+				can :read, :all
+			end
+
+			if user.admin?
+				can :manage, :all
+			end
 		end
 	end
 
