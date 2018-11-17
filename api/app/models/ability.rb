@@ -5,6 +5,20 @@ class Ability
 		can :read, :all
 
 		if user.present?
+			if user.role.business?
+				can :manage, :all, :user_id
+			end
+
+			if user.role.volunteer?
+				can :read, :all
+			end
+
+			if user.role.admin?
+				can :manage, :all
+			end
+		end
+
+		if user.present?
 			can :manage, :all, :user_id => user.id
 		end
 	end
