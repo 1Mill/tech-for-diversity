@@ -9,6 +9,9 @@ export default {
 	computed: {
 		_ () {
 			return _
+		},
+		owner () {
+			return this.project.name_first + ' ' + this.project.name_last
 		}
 	}
 }
@@ -16,64 +19,68 @@ export default {
 
 <template>
 	<v-card>
-		<v-img gradient="to top right, rgba(0,0,0,0.3), rgba(0,0,0,0.3)"
-		:src='`https://picsum.photos/${_.random(180, 220)}/200/?random`'
-		aspect-ratio='1.9'
-		>
-			<v-container fluid>
-				<v-layout column>
-					<v-flex>
-						<h1 class='[ headline white--text ]' style='text-shadow: 1px 1px 5px black;'>{{ project.name }}</h1>
-					</v-flex>
-				</v-layout>
-			</v-container>
-		</v-img>
-		<v-card-title>
-			<v-container fluid>
-				<v-layout column>
-					<v-flex>
-						Stage:
-						<span class='[ font-weight-bold ]'>
-							{{ project.stage }}
-						</span>
-					</v-flex>
-					<v-flex>
-						<v-icon>place</v-icon>
-						{{ project.address_city }}, {{ project.address_state }}
-					</v-flex>
-					<v-flex>
-						Updated: {{ $moment(project.updated_at).format('LL') }}
-					</v-flex>
-				</v-layout>
-			</v-container>
+		<v-card-title primary-title>
+			<v-layout row>
+				<v-flex>
+					<h1 class='[ title ]'>{{ project.company }}</h1>
+				</v-flex>
+			</v-layout>
 		</v-card-title>
+		<v-card-text>
+			<v-layout column>
+				<v-flex>
+					<v-layout row>
+						<v-flex shrink>
+							<v-icon>fas fa-map-marker</v-icon>
+						</v-flex>
+						<v-flex shrink>
+							{{ project.address_city }}, {{ project.address_state }}
+						</v-flex>
+					</v-layout>
+				</v-flex>
+				<v-flex>
+					<v-layout row wrap>
+						<v-chip
+						color=''
+						v-for='language in project.languages' :key='language.name'
+						>
+							{{ language.name }}
+						</v-chip>
+						<v-chip
+						class='[ info ]'
+						>
+							Testing
+						</v-chip>
+						<v-chip
+						class='[ success ]'
+						>
+							Testing
+						</v-chip>
+						<v-chip
+						class='[ warning ]'
+						>
+							Testing
+						</v-chip>
+						<v-chip
+						class='[ error ]'
+						>
+							Testing
+						</v-chip>
+					</v-layout>
+				</v-flex>
+			</v-layout>
+		</v-card-text>
 		<v-card-actions>
-			<v-container fluid>
-				<v-layout>
-					<v-flex>
-						<v-btn class='[ orange lighten-3 ]'
-						:to='`/projects/${project.id}`'
-						>
-							Learn more
-						</v-btn>
-					</v-flex>
-
-					<v-flex>
-						<v-btn flat
-						@click=''
-						>
-							Share
-						</v-btn>
-					</v-flex>
-				</v-layout>
-			</v-container>
-			<can I='manage' :this='project'>
-				<v-btn absolute fab top right small class='[ green lighten-4 ]'
-				:to='`/projects/${project.id}/edit`'
-				>
-					<v-icon>create</v-icon>
-				</v-btn>
-			</can>
+			<v-btn
+			@click=''
+			class='[ primary lighten-2 ]'
+			>
+				learn more
+			</v-btn>
+			<v-spacer/>
+			<v-btn flat>
+				share
+			</v-btn>
 		</v-card-actions>
 	</v-card>
 </template>
