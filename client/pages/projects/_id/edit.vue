@@ -48,30 +48,8 @@ export default {
 	<v-container>
 		<v-form @submit.prevent='submitForm'>
 			<v-text-field
-			v-model='project.title'
-			label='Title'
-			/>
-
-			<v-textarea auto-grow
-			v-model='project.description'
-			label='Description'
-			/>
-
-			<v-text-field
-			v-model='project.issue_area'
-			label='issue_area'
-			/>
-			<v-text-field
-			v-model='project.location_city'
-			label='location_city'
-			/>
-			<v-text-field
-			v-model='project.location_state'
-			label='location_state'
-			/>
-			<v-text-field
-			v-model='project.status'
-			label='status'
+			v-model='project.company'
+			label='Company'
 			/>
 
 			<v-btn type='submit' color='[ success ]'>

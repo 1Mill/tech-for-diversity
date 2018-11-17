@@ -21,7 +21,7 @@ export default {
 	<v-card>
 		<can I='manage' :this='project'>
 			<v-btn
-			to='`/projects/${project.id}/edit`'
+			:to='`/projects/${project.id}/edit`'
 			>
 				Edit
 			</v-btn>
