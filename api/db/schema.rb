@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2018_11_11_191906) do
+ActiveRecord::Schema.define(version: 2018_11_16_031232) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -21,18 +21,55 @@ ActiveRecord::Schema.define(version: 2018_11_11_191906) do
     t.index ["jti"], name: "index_jwt_blacklist_on_jti"
   end
 
-  create_table "projects", force: :cascade do |t|
-    t.string "title"
-    t.integer "issue_area"
-    t.string "location_city"
-    t.integer "location_state"
-    t.integer "status"
-    t.string "homepage"
-    t.text "description"
+  create_table "languages", force: :cascade do |t|
+    t.bigint "project_id"
+    t.integer "name"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
+    t.index ["project_id"], name: "index_languages_on_project_id"
+  end
+
+  create_table "links", force: :cascade do |t|
+    t.bigint "project_id"
+    t.string "route"
+    t.integer "group"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.index ["project_id"], name: "index_links_on_project_id"
+  end
+
+  create_table "projects", force: :cascade do |t|
     t.bigint "user_id"
+    t.string "company"
+    t.integer "stage"
+    t.string "name_first"
+    t.string "name_last"
+    t.string "email"
+    t.string "phone"
+    t.string "address_street_1"
+    t.string "address_street_2"
+    t.string "address_city"
+    t.integer "address_state"
+    t.string "address_zipcode"
+    t.integer "company_kind"
+    t.text "mission_statement"
+    t.text "who_you_are"
+    t.text "who_you_help"
+    t.text "what_you_do"
+    t.text "current_services"
+    t.integer "update_frequency"
+    t.boolean "domain_registered"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
     t.index ["user_id"], name: "index_projects_on_user_id"
+  end
+
+  create_table "services", force: :cascade do |t|
+    t.bigint "project_id"
+    t.integer "name"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.index ["project_id"], name: "index_services_on_project_id"
   end
 
   create_table "users", force: :cascade do |t|
@@ -47,5 +84,8 @@ ActiveRecord::Schema.define(version: 2018_11_11_191906) do
     t.index ["reset_password_token"], name: "index_users_on_reset_password_token", unique: true
   end
 
+  add_foreign_key "languages", "projects"
+  add_foreign_key "links", "projects"
   add_foreign_key "projects", "users"
+  add_foreign_key "services", "projects"
 end

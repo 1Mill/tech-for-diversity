@@ -8,7 +8,7 @@
 
 User.find_each(&:destroy)
 
-11.times do
+2.times do
 	Fabricate(:user).save
 end
 

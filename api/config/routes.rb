@@ -14,9 +14,13 @@ Rails.application.routes.draw do
 		end
 
 		resources :users, :shallow => true do
-			resources :projects
+			resources :projects do
+				resources :languages
+				resources :links
+				resources :services
+			end
 		end
 
-		get 'all_projects', :to => 'projects#all_projects'
+		get 'all_projects', :to => 'all_projects#index'
 	end
 end

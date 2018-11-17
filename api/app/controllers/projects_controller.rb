@@ -1,12 +1,12 @@
 class ProjectsController < ApplicationController
-  load_and_authorize_resource :except => :all_projects
-  before_action :set_project, only: [:show, :update, :destroy]
+  load_and_authorize_resource
   before_action :set_user, only: [:index, :create]
+  before_action :set_project, only: [:show, :update, :destroy]
 
   # GET /projects
   # GET /projects.json
   def index
-    @projects = @user.projects
+    @projects = @user.projects.all
   end
 
   # GET /projects/1
@@ -42,24 +42,18 @@ class ProjectsController < ApplicationController
     @project.destroy
   end
 
-  # Get /all_projects
-  def all_projects
-    @projects = Project.all.order(updated_at: :desc)
-    render 'index'
-  end
-
   private
     # Use callbacks to share common setup or constraints between actions.
-    def set_project
-      @project = Project.find(params[:id])
-    end
-
     def set_user
       @user = User.find(params[:user_id])
     end
 
+    def set_project
+      @project = Project.find(params[:id])
+    end
+
     # Never trust parameters from the scary internet, only allow the white list through.
     def project_params
-      params.require(:project).permit(:title, :issue_area, :location_city, :location_state, :status, :homepage, :description)
+      params.require(:project).permit(:user_id, :company, :stage, :name_first, :name_last, :email, :phone, :address_street_1, :address_street_2, :address_city, :address_state, :address_zipcode, :company_kind, :mission_statement, :who_you_are, :who_you_help, :what_you_do, :current_services, :update_frequency, :domain_registered)
     end
 end
